@@ -1,0 +1,5 @@
+sector 0: superblock
+
+000:01 - MysticFS Version
+001:20 - Volume label
+021:10 - Volume UUID

@@ -1,0 +1,7 @@
+/dev/fd(n) - Floppy disks where n is the number
+/dev/void - Null pipe
+/dev/com(n) - Serial communications port where n is is 1 to 4 (COM1 to COM4)
+/dev/lpt(n) - Printer (parallel) ports where n is 1 or 2, or in rare cases 3 (LPT1 or LPT2, then LPT3)
+/dev/mem - Physical memory "file". DANGEROUS!
+/dev/textram - Text mode (B8000) video RAM
+/dev/vgaram - VGA/Graphic mode (A0000) video RAM

@@ -1,0 +1,29 @@
+int 8D mofo's
+
+MISC RETURN CODES
+00 - Success
+01 - Unknown error
+02 - Bad command
+03 - File not found
+04 - Failed to open file
+05 - Failed to write file
+06 - Disk error
+07 - Hardware error
+08 - Driver error
+09 - Cannot perform command
+FF - Critical failure
+
+func (AX) | subfunc (AL) | params | desc
+----------------------------------------------------
+00	    00		   (none)   Retrieves the WackDOS version. On return, AH is set to <majver>, and AH is set to <minver>
+01	    01		   dx:si    Prints NUL-terminated string from address dx:si
+01	    02		   bl	    Prints single character
+01	    03		   (none)   Clears the screen
+02	    01		   bl	    Gets interrupt vector number
+02	    02		   bl, cx:  Sets interrupt vector number bl to address cx:dx
+			       dx
+03	    01		   (none)   Wait for keyboard stroke
+03	    02		   (none)   Wait for and get key stroke returned in AX
+03	    04		   (none)   Get *current* key stroke returned in AX
+
+Versions 2.X+

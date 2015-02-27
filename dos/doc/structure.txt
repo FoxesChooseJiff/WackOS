@@ -1,0 +1,9 @@
+wdos.bin - Real mode WackDOS kernel
+wdconf.cfg - Startup config file
+wdinit.wbs - Initial startup script file
+horn.wde - Command interpreter
+/wdos
+	/drv
+		<misc driver files>
+	<core executables>
+	
