@@ -1,5 +1,24 @@
-sector 0: superblock
+sector 0 : boot loader
 
-000:01 - MysticFS Version
-001:20 - Volume label
-021:10 - Volume UUID
+Since MysticFS will become a bit complicated, there's no way to bootstrap it within 512 (<510 actually) bytes of code. So we load an additional 15 sectors to greatly expand the boot procedure.
+--------------
+sector 1: basic data
+(in hex)
+000(5): Sector signature (HORNY)
+005(1): MFS major version
+006(1): MFS minor version
+007(10): UUID of volume
+017(20): Name of volume
+037(2): Year of volume creation*
+039(2): Month and day of volume creation*
+03B(3): Seconds relative to midnight of volume creation time*
+
+*relative to system's CMOS time
+--------------
+sectors 2 to 14: 2nd part bootstrap code
+
+These sectors will contain some code to load the """"real"""" 2nd stage loader (wdos.bin), and perhaps more features
+--------------
+secotr 15: (reserved)
+
+This sector is currently reserved and may be used in future modification. It also contains the end signature (CORN) located at the very last 4 bytes
